@@ -14,11 +14,13 @@ int main(){
     }
     if(c>0&&j==0){
         printf("Even");
+        
     }
-    else if(j>0&&c==0){
+    else if(c==0&&j>0){
         printf("Odd");
     }
     else{
         printf("Mixed");
     }
+        
 }

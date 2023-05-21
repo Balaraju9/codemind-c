@@ -1,15 +1,32 @@
 #include<stdio.h>
-int main(){
+
+int findSumOfOddIndices(int arr[], int n) {
+    int sum = 0;
+    for (int i = 1; i < n; i += 2) {
+        sum += arr[i];
+    }
+    return sum;
+}
+
+int main() {
     int n;
-    scanf("%d",&n);
-    int a[n],s=0;
-    for(int i=0;i<n;i++){
-        scanf("%d",&a[i]);
+
+    // Read the length of the array
+    scanf("%d", &n);
+
+    int arr[n];
+
+    // Read the array elements
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
     }
-    for(int i=0;i<n;i++){
-        if(i%2!=0){
-            s=s+a[i];
-        }
-    }
-    printf("%d",s);
+
+    // Find the sum of elements at odd indices
+    int sum = findSumOfOddIndices(arr, n);
+
+    // Display the sum
+    printf("%d
+", sum);
+
+    return 0;
 }

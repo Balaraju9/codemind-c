@@ -1,20 +1,27 @@
 #include <stdio.h>
 
-int main() {
-
-    int n1, n2, max;
-
+int findLCM(int a, int b) {
+    int max = (a > b) ? a : b;
+    int lcm = max;
     
-    scanf("%d %d", &n1, &n2);
-
-    // maximum number between n1 and n2 is stored in max
-    max = (n1 > n2) ? n1 : n2;
-
     while (1) {
-        if ((max % n1 == 0) && (max % n2 == 0)) {
-            printf( "%d",max);
+        if (lcm % a == 0 && lcm % b == 0)
             break;
-        }
-        ++max;
+        lcm += max;
     }
+    
+    return lcm;
+}
+
+int main() {
+    int a, b;
+   
+    scanf("%d %d", &a, &b);
+    
+    int lcm = findLCM(a, b);
+    
+    printf("%d
+", lcm);
+    
+    return 0;
 }
